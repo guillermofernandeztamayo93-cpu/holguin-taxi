@@ -1,0 +1,6 @@
+Agrega dentro de <manifest ...> en android/app/src/main/AndroidManifest.xml:
+
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+No agregues ubicación en segundo plano todavía; se implementará y revisará aparte.

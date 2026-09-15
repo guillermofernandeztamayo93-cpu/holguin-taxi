@@ -1,0 +1,19 @@
+workflows:
+  android-debug:
+    name: Holguín Taxi Android Debug
+    environment:
+      flutter: stable
+    scripts:
+      - name: Generate Android platform if needed
+        script: |
+          if [ ! -d android ]; then
+            flutter create --platforms=android .
+          fi
+      - name: Get packages
+        script: flutter pub get
+      - name: Analyze
+        script: flutter analyze
+      - name: Build debug APK
+        script: flutter build apk --debug
+    artifacts:
+      - build/app/outputs/flutter-apk/app-debug.apk
